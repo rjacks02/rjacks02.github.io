@@ -10998,7 +10998,7 @@ p.lead {
 
 .social-icons .social-icon:hover {
   background-color: rgb(var(--bs-primary-rgb));
-  border-radius: 10%;
+  border-radius: 5%;
   width: 12rem;
   background-size: contain;
   padding-right: 1rem;
@@ -11042,7 +11042,7 @@ p.lead {
 
 .social-icons .paper-icon:hover {
   background-color: rgb(var(--bs-primary-rgb));
-  border-radius: 10%;
+  border-radius: 5%;
   width: 15rem;
   background-size: contain;
   padding-right: 1rem;
