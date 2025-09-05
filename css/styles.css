@@ -10871,7 +10871,6 @@ p.lead {
   display: inline-flex;
   vertical-align: middle;
   text-decoration: none;
-
 }
 
 .subheading {
@@ -10998,7 +10997,7 @@ p.lead {
 
 .social-icons .social-icon:hover {
   background-color: rgb(var(--bs-primary-rgb));
-  border-radius: 5%;
+  border-radius: 4%;
   width: 12rem;
   background-size: contain;
   padding-right: 1rem;
