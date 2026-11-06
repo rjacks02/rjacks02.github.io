@@ -1,4 +1,4 @@
-/* Rebecca Jackson — portfolio site. Space theme. */
+/* Rebecca Jackson: portfolio site. Space theme. */
 
 :root {
   --bg: #090714;
@@ -9,7 +9,7 @@
   --border-strong: rgba(167, 139, 250, 0.4);
   --text: #e9e8f5;
   --text-dim: #a6a3c2;
-  --text-dimmer: #767296;
+  --text-dimmer: #8e8aae;
   --accent: #a78bfa;
   --accent-soft: #c4b5fd;
   --accent-2: #67e8f9;
@@ -125,7 +125,6 @@ img {
   opacity: 0.55;
   pointer-events: none;
   mix-blend-mode: screen;
-  will-change: transform;
 }
 .nebula-1 {
   top: -12rem;
@@ -133,7 +132,6 @@ img {
   width: 34rem;
   height: 34rem;
   background: radial-gradient(circle, rgba(167, 139, 250, 0.55), transparent 70%);
-  animation: drift-a 34s ease-in-out infinite alternate;
 }
 .nebula-2 {
   top: 30%;
@@ -141,7 +139,6 @@ img {
   width: 38rem;
   height: 38rem;
   background: radial-gradient(circle, rgba(244, 114, 182, 0.4), transparent 70%);
-  animation: drift-b 40s ease-in-out infinite alternate;
 }
 .nebula-3 {
   bottom: -16rem;
@@ -149,16 +146,6 @@ img {
   width: 40rem;
   height: 40rem;
   background: radial-gradient(circle, rgba(103, 232, 249, 0.28), transparent 70%);
-  animation: drift-a 46s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes drift-a {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(4rem, 3rem) scale(1.12); }
-}
-@keyframes drift-b {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(-3rem, 4rem) scale(1.08); }
 }
 
 .scroll-progress {
@@ -283,7 +270,6 @@ img {
   inset: 0;
   border-radius: 50%;
   background: conic-gradient(from 0deg, var(--accent-2), var(--accent), var(--accent-pink), var(--accent-2));
-  animation: spin 16s linear infinite;
 }
 .profile-ring img {
   position: relative;
@@ -293,10 +279,6 @@ img {
   object-fit: cover;
   border: 3px solid var(--bg-2);
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
 .sidenav-name {
   font-family: var(--ff-display);
   font-weight: 700;
@@ -404,24 +386,6 @@ img {
   border-bottom: none;
 }
 
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-2);
-  margin-bottom: 0.75rem;
-}
-.kicker::before {
-  content: "";
-  width: 1.6rem;
-  height: 1px;
-  background: linear-gradient(90deg, var(--accent-2), transparent);
-}
-
 .section h2 {
   font-size: clamp(1.8rem, 3vw, 2.5rem);
   margin-bottom: 2.75rem;
@@ -481,13 +445,7 @@ img {
   border-radius: 50%;
   background: var(--accent-2);
   box-shadow: 0 0 8px 2px rgba(103, 232, 249, 0.7);
-  animation: badge-pulse 2s ease-in-out infinite;
 }
-@keyframes badge-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
 .hero-contact {
   display: flex;
   flex-wrap: wrap;
@@ -577,14 +535,7 @@ img {
   background: var(--accent-2);
   border-radius: 2px;
   transform: translateX(-50%);
-  animation: scroll-dot 1.8s ease-in-out infinite;
 }
-@keyframes scroll-dot {
-  0% { top: 0.3rem; opacity: 1; }
-  70% { top: 1rem; opacity: 0; }
-  100% { top: 0.3rem; opacity: 0; }
-}
-
 /* ---------- buttons / pills ---------- */
 
 .btn {
@@ -729,6 +680,16 @@ img {
 
 /* ---------- awards ---------- */
 
+.award-group-title {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin: 2rem 0 1rem;
+}
+.award-group-title:first-of-type {
+  margin-top: 0;
+}
 .award-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
@@ -758,7 +719,7 @@ img {
   font-size: 1.05rem;
   margin-bottom: 0.9rem;
 }
-.award-card h3 {
+.award-card h4 {
   font-size: 1.05rem;
   margin-bottom: 0.35rem;
 }
@@ -790,7 +751,7 @@ img {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 }
 .skills-col h3 {
@@ -822,16 +783,51 @@ img {
   box-shadow: 0 0 14px -4px var(--accent-2);
 }
 
-/* ---------- reveal-on-scroll ---------- */
+/* ---------- accessibility ---------- */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--bg);
+  font-weight: 600;
+  transform: translateY(-200%);
 }
-.reveal.visible {
-  opacity: 1;
+.skip-link:focus {
   transform: none;
+  color: var(--bg);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 0.3rem;
+}
+main:focus {
+  outline: none;
+}
+
+/* Underline links inside text so they don't rely on color alone */
+.content p a,
+.content li a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 /* ---------- responsive ---------- */
@@ -851,11 +847,13 @@ img {
   }
   .sidenav {
     left: calc(-1 * var(--sidenav-w) - 2rem);
-    transition: left 0.3s ease;
+    visibility: hidden;
+    transition: left 0.3s ease, visibility 0.3s;
     padding-top: 5.5rem;
   }
   .sidenav.open {
     left: 0;
+    visibility: visible;
   }
   .content {
     margin-left: 0;
